@@ -36,17 +36,7 @@ function boxClicked(e) {
     if (hasPlayerWon(currentPlayer)) {
       playText.innerHTML = `${currentPlayer} wins!!`;
       alert("Current Player has Won! Restart Your game");
-      restartBtn.addEventListener("click", () => {
-         spaces.forEach((space, index) => {
-           spaces[index] = null;
-          });
-         boxes.forEach((box) => {
-           box.innerText = "";
-          });
-         playText.innerHTML = `Let's Play!!`;
-
-         currentPlayer = O_TEXT;
-         });
+      restartBtn.click();
       return;
     }
     currentPlayer = currentPlayer === O_TEXT ? X_TEXT : O_TEXT;
